@@ -1,0 +1,28 @@
+.burger {
+  margin: auto 0;
+  width: 30px;
+  height: 18px;
+  display: none;
+  cursor: pointer;
+
+  @media (max-width: 400px) {
+    width: 28px;
+  }
+
+  @media (max-width: 980px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  & .line {
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: white;
+
+    @media (max-width: 400px) {
+      width: 28px;
+    }
+  }
+}

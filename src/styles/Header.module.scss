@@ -1,0 +1,309 @@
+@import "variables";
+
+.header {
+  background: #1A1A25;
+
+  .menu {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 255px;
+
+    @media (max-width: 980px) {
+      padding: 0 20px;
+    }
+
+    @media (max-width: 320px) {
+      padding: 0 10px;
+    }
+
+    .divider {
+      background: rgba(133, 143, 164, 0.15);
+      border-radius: 1px;
+      height: 30px;
+      width: 1px;
+      align-self: center;
+
+
+      &__first {
+
+      }
+    }
+
+    &:first-child {
+      padding-top: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(133, 143, 164, 0.15);
+
+      .mobile_container {
+        display: flex;
+        gap: 30px;
+
+        @media (max-width: 650px) {
+          gap: 20px;
+        }
+
+        @media (max-width: 400px) {
+          gap: 15px;
+        }
+
+        .button {
+          &__match {
+            @media (max-width: 650px) {
+              display: none;
+            }
+          }
+
+          &__heart {
+            @media (max-width: 650px) {
+              display: none;
+            }
+          }
+
+          &__cart {
+            @media (max-width: 400px) {
+              width: 15.5px;
+            }
+          }
+        }
+
+        .search_button {
+          @media (max-width: 400px) {
+            width: 20px;
+          }
+        }
+
+      }
+
+      .container_logo {
+        display: flex;
+        gap: 50px;
+        max-height: 28.9px;
+
+        @media (max-width: 980px) {
+          max-width: 200px;
+        }
+
+        @media (max-width: 650px) {
+          max-width: 170px;
+        }
+
+        .town {
+          position: relative;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 140%;
+          /* identical to box height, or 20px */
+
+          color: #858FA4;
+
+          @media (max-width: 650px) {
+            display: none;
+          }
+
+          &::after {
+            content: url("@assets/images/triangle.svg");
+            position: absolute;
+            right: -10px;
+            top: 3px;
+            width: 6px;
+            height: 6px;
+          }
+        }
+      }
+
+      .container_info {
+        display: flex;
+        gap: 30px;
+
+        @media (max-width: 980px) {
+          display: none;
+        }
+
+        .partnership {
+          display: flex;
+          gap: 30px;
+          align-items: center;
+
+          &__dealers {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 140%;
+            color: #909CB5;
+          }
+
+          &__partners {
+            padding: 10px;
+            background: #384255;
+            border-radius: 6px;
+
+            font-style: normal;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 17px;
+            color: #F7F7F7;
+          }
+        }
+
+        .phone {
+          display: flex;
+          align-items: center;
+
+          &__number {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 17px;
+            color: #FFFFFF;
+          }
+
+          &__town {
+            position: relative;
+            margin-left: 4px;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            color: #909CB5;
+
+            &::after {
+              content: url("@assets/images/triangle.svg");
+              position: absolute;
+              right: -10px;
+              top: -2px;
+              width: 6px;
+              height: 6px;
+            }
+          }
+
+          &__call {
+            margin-left: 26px;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            color: #F53B49;
+          }
+        }
+
+        .login {
+          display: flex;
+          gap: 14px;
+
+          &__button {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            /* identical to box height, or 20px */
+
+
+            color: #FFFFFF;
+          }
+
+          &__icon {}
+        }
+      }
+    }
+
+    &:nth-child(2) {
+      padding-top: 16px;
+      padding-bottom: 16px;
+      justify-content: left;
+      gap: 30px;
+
+      @media (max-width: 980px) {
+        display: none;
+      }
+
+      .container_find {
+        position: relative;
+        display: flex;
+        gap: 50px;
+        align-items: center;
+
+        .catalog_button {
+          display: flex;
+          gap: 10px;
+          padding: 16px 20px 17px 24px;
+          background: #F53B49;
+          border-radius: 4px;
+
+          & > p {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 17px;
+            color: #FFFFFF;
+          }
+        }
+      }
+
+      .container_links {
+        display: flex;
+        gap: 36px;
+        padding: 12px 14px 13px 18px;
+
+        .link {
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 140%;
+          /* identical to box height, or 20px */
+
+          text-align: center;
+
+          color: #FFFFFF;
+        }
+      }
+
+      .container_icons {
+        display: flex;
+        gap: 50px;
+        padding-right: 10px;
+        flex-grow: 1;
+        justify-content: flex-end;
+        align-items: flex-end;
+        height: 28px;
+
+        .button {
+          position: relative;
+          height: 100%;
+          display: flex;
+          align-items: flex-end;
+        }
+      }
+    }
+
+    &:last-child {
+      background: #2A2C38;
+      display: flex;
+      justify-content: flex-start;
+      gap: 19px;
+      padding-top: 13px;
+      padding-bottom: 10px;
+      height: 44px;
+
+      .link {
+        display: flex;
+        gap: 10px;
+
+        & > p {
+          font-style: normal;
+          font-weight: 700;
+          font-size: 14px;
+          line-height: 17px;
+          color: #FFFFFF;
+        }
+
+        & > img {
+          transform: translateY(-1px);
+          align-self: center;
+          width: 6px;
+          height: 6px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+# This file was generated. Do not edit manually.
+
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Category {
+    id: ID!
+    name: String!
+    subCategories: JSON!
+}
+
+type ListMetadata {
+    count: Int
+}
+
+type Mutation {
+    createCategory(name: String!, subCategories: JSON!): Category
+    createManyCategory(data: [CategoryInput]): [Category]
+    createManyUser(data: [UserInput]): [User]
+    createUser(name: String!): User
+    removeCategory(id: ID!): Category
+    removeUser(id: ID!): User
+    updateCategory(id: ID!, name: String, subCategories: JSON): Category
+    updateUser(id: ID!, name: String): User
+}
+
+type Query {
+    Category(id: ID!): Category
+    User(id: ID!): User
+    _allCategoriesMeta(filter: CategoryFilter, page: Int, perPage: Int): ListMetadata
+    _allUsersMeta(filter: UserFilter, page: Int, perPage: Int): ListMetadata
+    allCategories(filter: CategoryFilter, page: Int, perPage: Int, sortField: String, sortOrder: String): [Category]
+    allUsers(filter: UserFilter, page: Int, perPage: Int, sortField: String, sortOrder: String): [User]
+}
+
+type User {
+    id: ID!
+    name: String!
+}
+
+"The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf)."
+scalar JSON
+
+input CategoryFilter {
+    id: ID
+    id_neq: ID
+    ids: [ID]
+    name: String
+    name_neq: String
+    q: String
+    subCategories: JSON
+    subCategories_neq: JSON
+}
+
+input CategoryInput {
+    name: String!
+    subCategories: JSON!
+}
+
+input UserFilter {
+    id: ID
+    id_neq: ID
+    ids: [ID]
+    name: String
+    name_neq: String
+    q: String
+}
+
+input UserInput {
+    name: String!
+}

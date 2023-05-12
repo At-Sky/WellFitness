@@ -1,12 +1,18 @@
-import React from 'react';
-import { createRoot } from 'react-dom/client';
-import Application from './components/Application';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import Application from '@src/Application.tsx';
+import '@styles/main.scss';
+import {BrowserRouter} from "react-router-dom";
+import {ApolloProvider} from "@apollo/client";
 
-// Say something
-console.log('[ERWT] : Renderer execution started');
+import client from "@src/apollo/client.ts";
 
-// Application to Render
-const app = <Application />;
-
-// Render application in DOM
-createRoot(document.getElementById('app')).render(app);
+ReactDOM.createRoot(document.getElementById("root")).render(
+    <React.StrictMode>
+        <ApolloProvider client={client}>
+            <BrowserRouter>
+                <Application/>
+            </BrowserRouter>
+        </ApolloProvider>
+    </React.StrictMode>
+);

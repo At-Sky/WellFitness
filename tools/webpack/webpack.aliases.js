@@ -5,11 +5,12 @@ const { createWebpackAliases } = require('./webpack.helpers');
  *
  * Tip: Some text editors will show the errors or invalid intellisense reports
  * based on these webpack aliases, make sure to update `tsconfig.json` file also
- * to match the `paths` we using in here for aliases in project.
+ * to match the `paths` we're using in here for aliases in project.
  */
 module.exports = createWebpackAliases({
   '@assets': 'assets',
   '@src': 'src',
   '@styles': 'src/styles',
   '@components': 'src/components',
+  '@pages': 'src/pages',
 });

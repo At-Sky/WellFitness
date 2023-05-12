@@ -1,0 +1,28 @@
+.modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40%;
+  height: 100%;
+  background: #2A2C38;
+  visibility: visible;
+  opacity: 1;
+  z-index: 1000;
+  transform: translateX(0);
+  transition: all 0.3s ease-in-out, opacity 0.2s ease-in-out;
+
+  @media (max-width: 800px) {
+    width: 50%;
+  }
+
+  @media (max-width: 400px) {
+    width: 100%;
+  }
+
+  &_hidden {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+

@@ -8,7 +8,8 @@
     "esModuleInterop": true,
     "noImplicitAny": true,
     "sourceMap": true,
-    "baseUrl": "./react-webpack-typescript-2022",
+//    "allowImportingTsExtensions": true,
+    "baseUrl": "./wellfitness",
     "outDir": "dist",
     "moduleResolution": "node",
     "resolveJsonModule": true,
@@ -17,7 +18,8 @@
       "@assets/*": ["./assets/*"],
       "@src/*": ["./src/*"],
       "@styles/*": ["./src/styles/*"],
-      "@components/*": ["./src/components/*"]
+      "@components/*": ["./src/components/*"],
+      "@pages/*": ["./src/pages/*"]
     }
   },
   "include": [

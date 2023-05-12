@@ -1,0 +1,159 @@
+.modal {
+  position: absolute;
+  top: calc(50% - 265px);
+  left: calc(50% - 300px);
+  max-width: 600px;
+  background: white;
+  visibility: visible;
+  opacity: 1;
+  z-index: 1000;
+  transform: scale(1);
+  transition: all 0.3s ease-in-out, opacity 0.2s ease-in-out;
+
+  box-shadow: 0 10px 30px rgba(133, 143, 164, 0.1);
+  border-radius: 6px;
+
+  padding: 62px 40px 47px;
+
+  @media (max-width: 800px) {
+    width: 50%;
+  }
+
+  @media (max-width: 400px) {
+    width: 100%;
+  }
+
+  .close_button {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+      opacity: 0.7;
+      transform: rotate(90deg);
+    }
+  }
+
+  &_hidden {
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  .highlighted {
+    color: #F53B49;
+  }
+
+  &__title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 110%;
+    /* identical to box height, or 33px */
+
+    text-align: center;
+
+    color: #1A1A25;
+
+    margin-bottom: 8px;
+  }
+
+  &__inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    /* identical to box height, or 24px */
+
+
+    /* серый / txt */
+
+    color: #384255;
+
+    .input_name {
+      display: inline;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      /* identical to box height, or 24px */
+
+
+      /* серый / txt */
+
+      color: #384255;
+    }
+  }
+
+  &__input {
+    background: #F7F7F7;
+    border: 1px solid rgba(144, 156, 181, 0.5);
+    border-radius: 6px;
+    padding: 13px 10px;
+
+    &::placeholder {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      /* identical to box height, or 24px */
+
+      display: flex;
+      align-items: center;
+
+      /* серый / txt */
+
+      color: #909CB5;
+    }
+  }
+
+  .error {
+    color: #F53B49;
+  }
+
+  &__submit_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__rules {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 140%;
+    /* or 20px */
+
+    text-align: center;
+
+    /* серый / txt */
+
+    color: #858FA4;
+  }
+
+  &__button {
+    background: #F53B49;
+    border-radius: 4px;
+    padding: 13px 20px;
+
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+
+    color: #FFFFFF;
+  }
+}

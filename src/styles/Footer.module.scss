@@ -1,0 +1,311 @@
+@import "variables";
+
+.footer {
+  color: white;
+  padding: 84px 255px 51px;
+  background: #1A1A25;
+  box-shadow: 0px 10px 50px rgba(133, 143, 164, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 51px;
+
+  @media (max-width: 960px) {
+    padding: 84px 20px 51px;
+  }
+
+  @media (max-width: 600px) {
+    padding-top: 23px;
+  }
+
+  .navbar {
+    display: flex;
+    gap: 30px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid rgba(133, 143, 164, 0.15);
+
+    @media (max-width: 960px) {
+      flex-wrap: wrap;
+      gap: 50px;
+    }
+
+    @media (max-width: 960px) {
+      column-gap: 20px;
+      width: 100%;
+    }
+
+    .subnavbar {
+      max-width: 210px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 130%;
+
+      @media (max-width: 600px) {
+        width: 140px;
+      }
+
+      @media (max-width: 310px) {
+        width: 100%;
+      }
+
+      &__title {
+        color: #FFFFFF;
+        margin-bottom: 28px;
+
+        @media (max-width: 600px) {
+          margin-bottom: 16px;
+        }
+      }
+
+      &__link {
+        color: #858FA4;
+        transition: color .2s ease-in-out;
+
+        @media (max-width: 600px) {
+          font-size: 14px;
+        }
+
+        @media (max-width: 319px) {
+          white-space: nowrap;
+        }
+
+        &:active, &:hover {
+          color: #FFFFFF;
+        }
+      }
+    }
+
+    .contacts {
+      flex-grow: 1;
+      display: flex;
+      justify-content: flex-end;
+
+      @media (max-width: 960px) {
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+
+      &__container {
+        @media (max-width: 960px) {
+          display: grid;
+          grid-template: 1fr / repeat(4, 1fr);
+        }
+
+        @media (max-width: 600px) {
+          flex-grow: 1;
+          grid-template: auto / repeat(1, 1fr);
+          gap: 30px;
+        }
+      }
+
+      &__button {
+        display: flex;
+        gap: 20px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 140%;
+        color: #858FA4;
+
+        padding: 14px;
+        background: rgba(133, 143, 164, 0.15);
+        border-radius: 5px;
+
+        margin-bottom: 50px;
+        height: fit-content;
+
+        @media (max-width: 960px) {
+          grid-column: 4 / 5;
+          font-size: 12px;
+        }
+
+        @media (max-width: 600px) {
+          grid-column: unset;
+          grid-row: unset;
+          margin-bottom: 0;
+          justify-content: space-between;
+        }
+      }
+
+      .calls {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 23px;
+
+        @media (max-width: 960px) {
+          margin-bottom: 0;
+          grid-column: 1 / 2;
+          grid-row: 1 / 2;
+        }
+
+        &__phone {
+          font-style: normal;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 140%;
+
+          color: #858FA4;
+        }
+
+        &__feedback {
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 140%;
+
+          color: #FFFFFF;
+          text-align: left;
+        }
+      }
+    }
+
+    .mail {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 40px;
+
+      @media (max-width: 960px) {
+        margin-bottom: 0;
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+      }
+
+      @media (max-width: 600px) {
+        margin-bottom: 0;
+        grid-column: unset;
+        grid-row: unset;
+      }
+
+      &__adress {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        /* identical to box height */
+
+
+        color: #858FA4;
+      }
+
+      &__feedback {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 140%;
+        /* identical to box height, or 20px */
+
+
+        color: #FFFFFF;
+        text-align: left;
+      }
+    }
+
+    .other {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 140%;
+
+      color: #4B7EE8;
+
+      @media (max-width: 960px) {
+        margin-bottom: 0;
+        grid-column: 3 / 4;
+        grid-row: 1 / 2;
+      }
+
+      @media (max-width: 600px) {
+        margin-bottom: 0;
+        grid-column: unset;
+        grid-row: unset;
+      }
+    }
+  }
+
+  .info {
+    display: grid;
+    grid-template: 1fr 1fr / repeat(4, 1fr);
+    row-gap: 17px;
+    align-items: center;
+
+    @media (max-width: 960px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 600px) {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__icons {
+      justify-self: center;
+      display: flex;
+      gap: 10px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 30px;
+      justify-self: flex-end;
+
+      @media (max-width: 960px) {
+        grid-row: 2 / 3;
+        grid-column: 3 / 4;
+      }
+
+      @media (max-width: 600px) {
+        row-gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      &__item {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17px;
+        border-radius: 6px;
+        padding: 10px;
+
+        &_partner {
+          background: #384255;
+          color: #FFFFFF;
+        }
+
+        &_dealer {
+          color: #858FA4;
+          border: 1px solid rgba(144, 156, 181, 0.5);
+        }
+      }
+    }
+
+    .payment {
+      justify-self: flex-end;
+      display: flex;
+      gap: 30px;
+
+      @media (max-width: 600px) {
+        flex-wrap: wrap;
+      }
+    }
+
+    &__rights {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 140%;
+      /* identical to box height, or 20px */
+
+
+      color: #858FA4;
+    }
+  }
+}
