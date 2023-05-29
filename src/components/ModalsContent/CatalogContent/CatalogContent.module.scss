@@ -77,4 +77,35 @@
     opacity: 0;
     transform: scale(0);
   }
+
+  .header {
+    display: flex;
+    gap: 36px;
+    border-bottom: 1px solid rgba(133, 143, 164, 0.2);
+
+    &__button {
+      padding-bottom: 16px;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 130%;
+      border-bottom: 4px solid transparent;
+
+
+      color: #1A1A25;
+
+      &:hover {
+        border-bottom: 4px solid #F53B49;
+      }
+
+      &_active {
+        border-bottom: 4px solid #F53B49;
+      }
+    }
+  }
+
+  .container {
+    display: grid;
+    grid-template: 1fr / minmax(100px, 327px) 1fr;
+  }
 }

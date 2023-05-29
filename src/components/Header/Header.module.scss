@@ -1,4 +1,4 @@
-@import "variables";
+@import "../../styles/variables";
 
 .header {
   background: #1A1A25;
@@ -116,10 +116,6 @@
         display: flex;
         gap: 30px;
 
-        @media (max-width: 980px) {
-          display: none;
-        }
-
         .partnership {
           display: flex;
           gap: 30px;
@@ -212,10 +208,6 @@
       padding-bottom: 16px;
       justify-content: left;
       gap: 30px;
-
-      @media (max-width: 980px) {
-        display: none;
-      }
 
       .container_find {
         position: relative;

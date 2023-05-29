@@ -1,4 +1,4 @@
-@import "variables";
+@import "../../styles/variables";
 
 .footer {
   color: white;
@@ -22,6 +22,10 @@
     gap: 30px;
     padding-bottom: 28px;
     border-bottom: 1px solid rgba(133, 143, 164, 0.15);
+
+    @media (max-width: 1400px) {
+      flex-wrap: wrap;
+    }
 
     @media (max-width: 960px) {
       flex-wrap: wrap;
@@ -90,6 +94,12 @@
       }
 
       &__container {
+        @media (max-width: 1400px) {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+
         @media (max-width: 960px) {
           display: grid;
           grid-template: 1fr / repeat(4, 1fr);
@@ -237,7 +247,7 @@
     row-gap: 17px;
     align-items: center;
 
-    @media (max-width: 960px) {
+    @media (max-width: 1650px) {
       grid-template-columns: repeat(3, 1fr);
     }
 
@@ -256,6 +266,11 @@
       display: flex;
       gap: 30px;
       justify-self: flex-end;
+
+      @media (max-width: 1650px) {
+        grid-row: 2 / 3;
+        grid-column: 3 / 4;
+      }
 
       @media (max-width: 960px) {
         grid-row: 2 / 3;
@@ -306,6 +321,11 @@
 
 
       color: #858FA4;
+
+      @media (max-width: 1650px) {
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+      }
     }
   }
 }

@@ -1,0 +1,9 @@
+.container {
+  padding: 31px 0 31px 31px;
+  display: grid;
+  grid-template: auto / repeat(3, 1fr);
+
+  &_hidden {
+    display: none;
+  }
+}

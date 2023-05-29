@@ -1,16 +1,16 @@
-export interface ICategory {
+interface ICategory {
     name: string
     id: number
     subCategories: string
 }
 
-export interface ISubCategory {
+interface ISubCategory {
     id: number
     name: string
     smallCategories: ISmallCategory[]
 }
 
-export interface ISmallCategory {
+interface ISmallCategory {
     id: number
     name: string
     img: string

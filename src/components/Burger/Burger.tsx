@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import styles from '@styles/Burger.module.scss'
+import styles from './Burger.module.scss'
 
 interface IBurgerProps {
     isMenuOpened: boolean;

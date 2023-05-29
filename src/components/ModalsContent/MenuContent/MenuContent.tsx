@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@styles/ModalsContent/MenuContent.module.scss'
+import styles from './MenuContent.module.scss'
 
 interface IMenuContent {
     isModalOpened: boolean;

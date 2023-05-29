@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@styles/Slider.module.scss'
+import styles from '@components/Slider/Slider.module.scss'
 
 interface ISliderProps {
 

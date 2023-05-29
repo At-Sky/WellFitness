@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import style from '@styles/HeaderButton.module.scss';
+import style from './HeaderButton.module.scss';
 
 interface IHeaderButtonProps {
     icon: string;

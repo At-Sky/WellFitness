@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import styles from "@styles/Modal.module.scss";
+import styles from "./Modal.module.scss";
 
 interface IModal {
     isOverlayHidden?: boolean;

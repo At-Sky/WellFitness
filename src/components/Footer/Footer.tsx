@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@styles/Footer.module.scss'
+import styles from './Footer.module.scss'
 import instagram from '@assets/icons/Footer/instagram.svg'
 import facebook from '@assets/icons/Footer/facebook.svg'
 import youtube from '@assets/icons/Footer/youtube.svg'

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@styles/ModalsContent/CallBackContent.module.scss';
+import styles from './CallBackContent.module.scss';
 import {Controller, SubmitHandler, useForm} from "react-hook-form";
 import { PatternFormat } from "react-number-format";
 import close from '@assets/icons/close.svg';
