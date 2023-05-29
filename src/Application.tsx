@@ -1,6 +1,6 @@
 import React from 'react';
-import MainPage from "@pages/MainPage.tsx";
-import Page404 from "@pages/Page404.tsx";
+import MainPage from "@pages/MainPage/MainPage.tsx";
+import Page404 from "@pages/Page404/Page404.tsx";
 import Contacts from "@pages/Contacts.tsx";
 import News from "@pages/News.tsx";
 import {Route, Routes} from "react-router-dom";

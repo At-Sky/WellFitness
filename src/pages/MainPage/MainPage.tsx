@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@styles/MainPage.module.scss'
+import styles from './MainPage.module.scss'
 
 interface IMainPageProps {
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@styles/Page404.module.scss'
+import styles from './Page404.module.scss'
 import {Link} from "react-router-dom";
 
 function Page404() {

@@ -103,7 +103,7 @@ function Header(props: IHeaderProps) {
                                 <img src={catalog} alt="catalog"/>
                                 <p>Каталог</p>
                             </button>
-                            <Modal isOverlayHidden={true} isModalOpened={isCatalogOpened} setIsModalOpened={setIsCatalogOpened}>
+                            <Modal isPopUp={true} isOverlayHidden={true} isModalOpened={isCatalogOpened} setIsModalOpened={setIsCatalogOpened}>
                                 <CatalogContent setIsModalOpened={setIsCatalogOpened} isModalOpened={isCatalogOpened}/>
                             </Modal>
                             <button className={styles.search_button}>

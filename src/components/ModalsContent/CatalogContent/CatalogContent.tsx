@@ -5,7 +5,6 @@ import {useQuery} from "@apollo/client";
 import {ALL_CATEGORIES} from "@src/apollo/requests/getCategories.ts";
 import SubCategoriesList from "@components/ModalsContent/CatalogInMenu/SubCategoriesList/SubCategoriesList.tsx";
 import SmallCategoriesContainer from "@components/ModalsContent/CatalogInMenu/SmallCategories/SmallCategoriesContainer/SmallCategoriesContainer.tsx";
-import useFetch from "@src/hooks/useFetch.ts";
 
 interface ICatalogContent {
     isModalOpened: boolean;
