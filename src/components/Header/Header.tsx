@@ -21,6 +21,7 @@ import triangleW from '@assets/images/triangleW.svg';
 import {useResize} from "@src/hooks/useResize.ts";
 import TownPicker from "@components/TownPicker/TownPicker.tsx";
 import TownPickerContent from "@components/ModalsContent/TownPickerContent/TownPickerContent.tsx";
+import {useLocalStorage} from "usehooks-ts";
 
 
 interface IHeaderProps {
@@ -30,7 +31,17 @@ interface IHeaderProps {
 function Header(props: IHeaderProps) {
     const [isMobile, setIsMobile] = useState(false);
     const {width} = useResize();
-    const [currentTown, setCurrentTown] = useState('Москва');
+    const [isTown, setTown] = useLocalStorage<string>('Town', null)
+    const [currentTown, setCurrentTown] = useState(initTown());
+
+    function initTown() {
+        return isTown || 'Москва'
+    }
+    function handleTownPickerClick(value: string) {
+        setCurrentTown(value)
+        setTown(value)
+    }
+
 
     //modals
     const [isMenuOpened, setIsMenuOpened] = useState(false);
@@ -49,8 +60,11 @@ function Header(props: IHeaderProps) {
                     <Link to={'/'}><img src={logo} alt={'logo'}/></Link>
                     <TownPicker town={currentTown} setIsTownPickerOpened={setIsTownPickerOpened}/>
                     <Modal isModalOpened={isTownPickerOpened} setIsModalOpened={setIsTownPickerOpened}>
-                        <TownPickerContent setTown={setCurrentTown} isModalOpened={isTownPickerOpened}
-                                           setIsModalOpened={setIsTownPickerOpened}/>
+                        <TownPickerContent
+                            setTown={handleTownPickerClick}
+                            isModalOpened={isTownPickerOpened}
+                            setIsModalOpened={setIsTownPickerOpened}
+                        />
                     </Modal>
                 </div>
                 {
@@ -68,8 +82,10 @@ function Header(props: IHeaderProps) {
                                     onClick={() => setIsCallbackFormOpened(!isCallbackFormOpened)}>Заказать звонок
                             </button>
                             <Modal isModalOpened={isCallbackFormOpened} setIsModalOpened={setIsCallbackFormOpened}>
-                                <CallBackContent isModalOpened={isCallbackFormOpened}
-                                                 setIsModalOpened={setIsCallbackFormOpened}/>
+                                <CallBackContent
+                                    isModalOpened={isCallbackFormOpened}
+                                    setIsModalOpened={setIsCallbackFormOpened}
+                                />
                             </Modal>
                         </div>
                         <span className={styles.divider}></span>
