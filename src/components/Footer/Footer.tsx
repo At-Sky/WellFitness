@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './Footer.module.scss'
 import instagram from '@assets/icons/Footer/instagram.svg'
 import facebook from '@assets/icons/Footer/facebook.svg'
@@ -10,8 +10,12 @@ import webmoney from '@assets/icons/Footer/webmoney.svg'
 import paypal from '@assets/icons/Footer/paypal.svg'
 import plane from '@assets/icons/Footer/paper-plane.svg'
 import logo from '@assets/images/logo.svg'
+import Modal from "@components/Modal/Modal.tsx";
+import CallBackContent from "@components/ModalsContent/CallbackContent/CallbackContent.tsx";
 
 function Footer() {
+    const [isCallbackFormOpened, setIsCallbackFormOpened] = useState(false);
+
     return (
         <footer className={styles.footer}>
             <nav className={styles.navbar}>
@@ -63,7 +67,10 @@ function Footer() {
                         <div className={styles.calls}>
                             <p className={styles.calls__phone}>+7 (000) 000-00-00 для Москвы</p>
                             <p className={styles.calls__phone}>8 (800) 000-00-00  для России</p>
-                            <button className={styles.calls__feedback}>Заказать звонок</button>
+                            <button className={styles.calls__feedback} onClick={() => setIsCallbackFormOpened(!isCallbackFormOpened)}>Заказать звонок</button>
+                            <Modal isModalOpened={isCallbackFormOpened} setIsModalOpened={setIsCallbackFormOpened}>
+                                <CallBackContent isModalOpened={isCallbackFormOpened} setIsModalOpened={setIsCallbackFormOpened}/>
+                            </Modal>
                         </div>
                         <div className={styles.mail}>
                             <p className={styles.mail__adress}>wellfitness@wellfit.ru</p>

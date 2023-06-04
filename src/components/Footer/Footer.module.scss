@@ -1,4 +1,4 @@
-@import "../../styles/variables";
+@import "@styles/variables";
 
 .footer {
   color: white;
@@ -8,6 +8,10 @@
   display: flex;
   flex-direction: column;
   gap: 51px;
+
+  @media (max-width: 1600px) {
+    padding: 84px 40px 51px;
+  }
 
   @media (max-width: 960px) {
     padding: 84px 20px 51px;
@@ -25,6 +29,7 @@
 
     @media (max-width: 1400px) {
       flex-wrap: wrap;
+      justify-content: space-between;
     }
 
     @media (max-width: 960px) {
@@ -87,6 +92,10 @@
       display: flex;
       justify-content: flex-end;
 
+      @media (max-width: 1400px) {
+        justify-content: space-between;
+      }
+
       @media (max-width: 960px) {
         justify-content: space-between;
         flex-wrap: wrap;
@@ -95,6 +104,7 @@
 
       &__container {
         @media (max-width: 1400px) {
+          flex-grow: 1;
           display: flex;
           flex-wrap: wrap;
           justify-content: space-between;

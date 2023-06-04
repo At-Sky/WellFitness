@@ -1,0 +1,99 @@
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  width: 50%;
+  background: white;
+  visibility: visible;
+  opacity: 1;
+  z-index: 1000;
+  transition: all 0.3s ease-in-out, opacity 0.2s ease-in-out;
+
+  box-shadow: 0px 10px 30px rgba(133, 143, 164, 0.1);
+  border-radius: 6px;
+
+  padding: 57px 32px 30px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  @media (max-width: 800px) {
+    width: 50%;
+  }
+
+  @media (max-width: 400px) {
+    width: 100%;
+  }
+
+  .close_button {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+      opacity: 0.7;
+      transform: rotate(90deg);
+    }
+  }
+
+  &_hidden {
+    visibility: hidden;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+
+  .title {
+    margin-bottom: 14px;
+
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 110%;
+    /* identical to box height, or 33px */
+
+
+    color: #1A1A25;
+  }
+
+  .input_group {
+    display: flex;
+    justify-content: space-between;
+    background: #F7F7F7;
+    padding: 15px 20px 13px;
+    border: 1px solid rgba(133, 143, 164, 0.15);
+    border-radius: 5px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    /* identical to box height, or 20px */
+
+
+    color: #858FA4;
+  }
+
+  .example {
+    display: flex;
+    gap: 7px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    /* identical to box height, or 20px */
+    color: #858FA4;
+
+    .highlighted {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 140%;
+      /* identical to box height, or 20px */
+
+
+      color: #F53B49;
+    }
+  }
+}

@@ -13,4 +13,5 @@ module.exports = createWebpackAliases({
   '@styles': 'src/styles',
   '@components': 'src/components',
   '@pages': 'src/pages',
+  '@store': 'src/store',
 });

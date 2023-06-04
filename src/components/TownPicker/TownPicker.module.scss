@@ -1,0 +1,23 @@
+.town {
+  position: relative;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  /* identical to box height, or 20px */
+
+  color: #858FA4;
+
+  @media (max-width: 650px) {
+    display: none;
+  }
+
+  &::after {
+    content: url("@assets/images/triangle.svg");
+    position: absolute;
+    right: -10px;
+    top: 3px;
+    width: 6px;
+    height: 6px;
+  }
+}

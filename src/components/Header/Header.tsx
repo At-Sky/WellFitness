@@ -19,7 +19,8 @@ import catalog from '@assets/icons/menu.svg';
 import search from '@assets/icons/search.svg';
 import triangleW from '@assets/images/triangleW.svg';
 import {useResize} from "@src/hooks/useResize.ts";
-
+import TownPicker from "@components/TownPicker/TownPicker.tsx";
+import TownPickerContent from "@components/ModalsContent/TownPickerContent/TownPickerContent.tsx";
 
 
 interface IHeaderProps {
@@ -28,12 +29,14 @@ interface IHeaderProps {
 
 function Header(props: IHeaderProps) {
     const [isMobile, setIsMobile] = useState(false);
-    const { width } = useResize();
+    const {width} = useResize();
+    const [currentTown, setCurrentTown] = useState('Москва');
 
     //modals
     const [isMenuOpened, setIsMenuOpened] = useState(false);
     const [isCallbackFormOpened, setIsCallbackFormOpened] = useState(false);
     const [isCatalogOpened, setIsCatalogOpened] = useState(false);
+    const [isTownPickerOpened, setIsTownPickerOpened] = useState(false);
 
     useEffect(() => {
         width <= 1750 ? setIsMobile(true) : setIsMobile(false)
@@ -44,7 +47,11 @@ function Header(props: IHeaderProps) {
             <div className={styles.menu}>
                 <div className={styles.container_logo}>
                     <Link to={'/'}><img src={logo} alt={'logo'}/></Link>
-                    <button className={styles.town}>Москва</button>
+                    <TownPicker town={currentTown} setIsTownPickerOpened={setIsTownPickerOpened}/>
+                    <Modal isModalOpened={isTownPickerOpened} setIsModalOpened={setIsTownPickerOpened}>
+                        <TownPickerContent setTown={setCurrentTown} isModalOpened={isTownPickerOpened}
+                                           setIsModalOpened={setIsTownPickerOpened}/>
+                    </Modal>
                 </div>
                 {
                     !isMobile &&
@@ -57,9 +64,12 @@ function Header(props: IHeaderProps) {
                         <div className={styles.phone}>
                             <a href="tel:+7 (800) 000-00-00" className={styles.phone__number}>+7 (800) 000-00-00</a>
                             <button className={styles.phone__town}>Мск</button>
-                            <button className={styles.phone__call} onClick={() => setIsCallbackFormOpened(!isCallbackFormOpened)}>Заказать звонок</button>
+                            <button className={styles.phone__call}
+                                    onClick={() => setIsCallbackFormOpened(!isCallbackFormOpened)}>Заказать звонок
+                            </button>
                             <Modal isModalOpened={isCallbackFormOpened} setIsModalOpened={setIsCallbackFormOpened}>
-                                <CallBackContent isModalOpened={isCallbackFormOpened} setIsModalOpened={setIsCallbackFormOpened}/>
+                                <CallBackContent isModalOpened={isCallbackFormOpened}
+                                                 setIsModalOpened={setIsCallbackFormOpened}/>
                             </Modal>
                         </div>
                         <span className={styles.divider}></span>
@@ -97,45 +107,46 @@ function Header(props: IHeaderProps) {
             </div>
             {
                 !isMobile &&
-                    <div className={styles.menu}>
-                        <div className={styles.container_find}>
-                            <button onClick={() => setIsCatalogOpened(!isCatalogOpened)} className={styles.catalog_button}>
-                                <img src={catalog} alt="catalog"/>
-                                <p>Каталог</p>
-                            </button>
-                            <Modal isPopUp={true} isOverlayHidden={true} isModalOpened={isCatalogOpened} setIsModalOpened={setIsCatalogOpened}>
-                                <CatalogContent setIsModalOpened={setIsCatalogOpened} isModalOpened={isCatalogOpened}/>
-                            </Modal>
-                            <button className={styles.search_button}>
-                                <img src={search} alt="search"/>
-                            </button>
-                        </div>
-                        <span className={styles.divider}></span>
-                        <nav className={styles.container_links}>
-                            <Link to={'/brands'} className={styles.link}>Бренды</Link>
-                            <Link to={'/service'} className={styles.link}>Сервис</Link>
-                            <Link to={'/offers'} className={styles.link}>Услуги</Link>
-                            <Link to={'/support'} className={styles.link}>Поддержка</Link>
-                            <Link to={'/about'} className={styles.link}>О компании</Link>
-                            <Link to={'/blog'} className={styles.link}>Блог</Link>
-                            <Link to={'/locations'} className={styles.link}>Где купить</Link>
-                            <Link to={'/contacts'} className={styles.link}>Контакты</Link>
-                        </nav>
-                        <div className={styles.container_icons}>
-                            <HeaderButton
-                                icon={match} styles={styles.button}
-                                alt={'match'} width={17} height={17} amount={10}
-                            />
-                            <HeaderButton
-                                icon={heart} styles={styles.button}
-                                alt={'heart'} width={24} height={20} amount={15}
-                            />
-                            <HeaderButton
-                                icon={cart} styles={styles.button}
-                                alt={'cart'} width={21} height={24.5} amount={1}
-                            />
-                        </div>
+                <div className={styles.menu}>
+                    <div className={styles.container_find}>
+                        <button onClick={() => setIsCatalogOpened(!isCatalogOpened)} className={styles.catalog_button}>
+                            <img src={catalog} alt="catalog"/>
+                            <p>Каталог</p>
+                        </button>
+                        <Modal isPopUp={true} isOverlayHidden={true} isModalOpened={isCatalogOpened}
+                               setIsModalOpened={setIsCatalogOpened}>
+                            <CatalogContent setIsModalOpened={setIsCatalogOpened} isModalOpened={isCatalogOpened}/>
+                        </Modal>
+                        <button className={styles.search_button}>
+                            <img src={search} alt="search"/>
+                        </button>
                     </div>
+                    <span className={styles.divider}></span>
+                    <nav className={styles.container_links}>
+                        <Link to={'/brands'} className={styles.link}>Бренды</Link>
+                        <Link to={'/service'} className={styles.link}>Сервис</Link>
+                        <Link to={'/offers'} className={styles.link}>Услуги</Link>
+                        <Link to={'/support'} className={styles.link}>Поддержка</Link>
+                        <Link to={'/about'} className={styles.link}>О компании</Link>
+                        <Link to={'/blog'} className={styles.link}>Блог</Link>
+                        <Link to={'/locations'} className={styles.link}>Где купить</Link>
+                        <Link to={'/contacts'} className={styles.link}>Контакты</Link>
+                    </nav>
+                    <div className={styles.container_icons}>
+                        <HeaderButton
+                            icon={match} styles={styles.button}
+                            alt={'match'} width={17} height={17} amount={10}
+                        />
+                        <HeaderButton
+                            icon={heart} styles={styles.button}
+                            alt={'heart'} width={24} height={20} amount={15}
+                        />
+                        <HeaderButton
+                            icon={cart} styles={styles.button}
+                            alt={'cart'} width={21} height={24.5} amount={1}
+                        />
+                    </div>
+                </div>
             }
             <div className={styles.menu}>
                 <a href="" className={styles.link}>

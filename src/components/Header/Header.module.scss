@@ -8,6 +8,10 @@
     justify-content: space-between;
     padding: 0 255px;
 
+    @media (max-width: 1600px) {
+      padding: 0 40px;
+    }
+
     @media (max-width: 980px) {
       padding: 0 20px;
     }
@@ -85,30 +89,6 @@
 
         @media (max-width: 650px) {
           max-width: 170px;
-        }
-
-        .town {
-          position: relative;
-          font-style: normal;
-          font-weight: 400;
-          font-size: 14px;
-          line-height: 140%;
-          /* identical to box height, or 20px */
-
-          color: #858FA4;
-
-          @media (max-width: 650px) {
-            display: none;
-          }
-
-          &::after {
-            content: url("@assets/images/triangle.svg");
-            position: absolute;
-            right: -10px;
-            top: 3px;
-            width: 6px;
-            height: 6px;
-          }
         }
       }
 
