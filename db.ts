@@ -47,6 +47,27 @@ module.exports = {
     ],
     users: [
         {id: 123, name: "John Doe"},
-        {id: 456, name: "Jane Doe"}
+        {id: 456, name: "ASvfvfv Lkrtwrw"},
+        {id: 4234, name: "Asdad Asdasd"},
+        {id: 234234, name: "Xvcvxc Qeqda"}
     ],
+    likes: [
+        {userId: 123, productsList: [123, 321, 312]},
+        {userId: 4234, productsList: [123, 321, 312]},
+        {userId: 456, productsList: [123, 321, 312]},
+    ],
+    compares: [
+        {userId: 123, comparesList: [
+            [123, 321], [312, 321]
+        ]},
+        {userId: 4234, comparesList: [
+            [123, 321], [312, 321]
+        ]},
+        {userId: 456, comparesList: [
+            [123, 321], [312, 321]
+        ]},
+    ],
+    products: [
+        {id: 123, name: 'asdasd', shortName: 'ads', price: 100, amount: 100},
+    ]
 }
