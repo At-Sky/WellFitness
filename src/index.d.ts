@@ -46,7 +46,7 @@ declare interface ILike {
 //compares
 declare interface ICompare {
     userId: number;
-    comparesList: ProductId[]
+    comparesList: [ProductId, ProductId][]
 }
 
 //products
