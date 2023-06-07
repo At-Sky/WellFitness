@@ -46,28 +46,32 @@ module.exports = {
         },
     ],
     users: [
-        {id: 123, name: "John Doe"},
-        {id: 456, name: "ASvfvfv Lkrtwrw"},
-        {id: 4234, name: "Asdad Asdasd"},
-        {id: 234234, name: "Xvcvxc Qeqda"}
+        {id: 1, firstName: "John", lastName: 'Doe', email: 'asdas@gmail.com', phone: '88888888'},
+        {id: 2, firstName: "Ivjvn", lastName: 'Icnrvs', email: 'asdas@gmail.com', phone: '88888888'},
+        {id: 3, firstName: "Pdvff", lastName: 'Pasdas', email: 'asdas@gmail.com', phone: '88888888'},
+        {id: 4, firstName: "Aasdasd", lastName: 'Vxvcx', email: 'asdas@gmail.com', phone: '88888888'}
     ],
     likes: [
-        {userId: 123, productsList: [123, 321, 312]},
-        {userId: 4234, productsList: [123, 321, 312]},
-        {userId: 456, productsList: [123, 321, 312]},
+        {userId: 1, likesList: [1, 2, 3]},
+        {userId: 2, likesList: [3, 1, 2]},
+        {userId: 3, likesList: [4, 3, 5]},
     ],
     compares: [
-        {userId: 123, comparesList: [
-            [123, 321], [312, 321]
+        {userId: 1, comparesList: [
+            [1, 2], [3, 4]
         ]},
-        {userId: 4234, comparesList: [
-            [123, 321], [312, 321]
+        {userId: 2, comparesList: [
+            [2, 3], [4, 5]
         ]},
-        {userId: 456, comparesList: [
-            [123, 321], [312, 321]
+        {userId: 3, comparesList: [
+            [4, 5], [2, 3]
         ]},
     ],
     products: [
-        {id: 123, name: 'asdasd', shortName: 'ads', price: 100, amount: 100},
+        {id: 1, name: 'asdasd', shortName: 'ads', price: 100, amount: 100},
+        {id: 2, name: 'asdasd', shortName: 'ads', price: 100, amount: 100},
+        {id: 3, name: 'asdasd', shortName: 'ads', price: 100, amount: 100},
+        {id: 4, name: 'asdasd', shortName: 'ads', price: 100, amount: 100},
+        {id: 5, name: 'asdasd', shortName: 'ads', price: 100, amount: 100},
     ]
 }
