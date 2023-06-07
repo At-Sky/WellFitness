@@ -8,7 +8,7 @@ const cartSlice = createSlice({
     },
     reducers: {
         addProduct(state, action) {
-
+// TODO: ртк апи это то что нужно там все меняется ка кнадо, надо разобраться нахуя тогда этот сторnpm
 
             state.products.push({
 

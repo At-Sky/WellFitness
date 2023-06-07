@@ -77,7 +77,6 @@ function Header(props: IHeaderProps) {
                         <span className={styles.divider}></span>
                         <div className={styles.phone}>
                             <a href="tel:+7 (800) 000-00-00" className={styles.phone__number}>+7 (800) 000-00-00</a>
-                            <button className={styles.phone__town}>Мск</button>
                             <button className={styles.phone__call}
                                     onClick={() => setIsCallbackFormOpened(!isCallbackFormOpened)}>Заказать звонок
                             </button>
